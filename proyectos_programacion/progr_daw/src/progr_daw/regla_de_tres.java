@@ -20,7 +20,7 @@ public class regla_de_tres {
 		double c = scan.nextDouble();
 		double x = (a * b) /c ;
 		
-		//TODO: Controlar que no
+		//TODO: Controlar que a no sea igual a 0
 		System.out.println("\nLa solución de la regla de tres es:");
 		System.out.print(a );
 		System.out.print(" -------> ");
