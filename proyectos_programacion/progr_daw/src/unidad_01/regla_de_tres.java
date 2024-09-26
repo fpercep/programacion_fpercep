@@ -1,4 +1,4 @@
-package progr_daw;
+package unidad_01;
 
 import java.util.Scanner;
 
@@ -20,14 +20,19 @@ public class regla_de_tres {
 		double c = scan.nextDouble();
 		double x = (a * b) /c ;
 		
-		//TODO: Controlar que a no sea igual a 0
-		System.out.println("\nLa solución de la regla de tres es:");
-		System.out.print(a );
-		System.out.print(" -------> ");
-		System.out.println(b );
-		System.out.print(c );
-		System.out.print(" -------> ");
-		System.out.print(x );
+		// TODO: Controlar que a no sea igual a 0
+		if (a != 0) {
+			System.out.println("\nLa solución de la regla de tres es:");
+			System.out.print(a );
+			System.out.print(" -------> ");
+			System.out.println(b );
+			System.out.print(c );
+			System.out.print(" -------> ");
+			System.out.print(x );
+		} else {
+			System.out.println("\na no puede ser 0, vuelve a intentarlo");
+		}
+
 		scan.close();
 
 	}

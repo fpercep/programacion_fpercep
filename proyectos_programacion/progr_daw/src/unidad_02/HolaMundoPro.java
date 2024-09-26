@@ -1,4 +1,4 @@
-package unidad_01;
+package unidad_02;
 
 import java.util.Scanner;
 
@@ -11,12 +11,22 @@ public class HolaMundoPro {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Introduce tu nombre: ");
 		String nombre = scan.nextLine();
+		
+//		 Versión con operador ternario
+//		 nombre = "".equals(nombre) ? "amigo" : nombre;
+		
+//		 Versión con if
+//		if ("".equals(nombre)) {
+//			nombre = "amigo";
+//		}
+//		System.out.println("Hola " + nombre + "!");
+		
+//		Versión con if compuesto
 		if ("".equals(nombre)) {
-			nombre = "amigo";
+			System.out.println("Hola amigo!");
+		} else {
+			System.out.println("Hola " + nombre + "!");
 		}
-		System.out.println("Hola " + nombre + "!");
-		
-		
 		scan.close();
 	}
 }
