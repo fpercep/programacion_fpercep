@@ -12,7 +12,6 @@ public class FakeMenu {
 		System.out.println("* 3. Copiar archivo");
 		System.out.println("* 4. Cerrar programa");
 		int opcion = scan.nextInt();
-		
 		//Con condicional compuesto
 //		if (opcion == 1) {
 //			System.out.print("Comprimiendo archivo...");
@@ -44,6 +43,7 @@ public class FakeMenu {
 		default:
 			System.err.print("OPCIÓN INCORRECTA");
 			break;
+			
 		}
 	}
 
