@@ -43,8 +43,8 @@ public class FakeMenu {
 		default:
 			System.err.print("OPCIÓN INCORRECTA");
 			break;
-			
 		}
+		scan.close();
 	}
 
 }

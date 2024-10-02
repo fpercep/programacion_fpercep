@@ -21,7 +21,8 @@ public class MayorNumeroFor {
 		}
 		
 		System.out.println("El mayor numero es " + mayorNumero);
-		
+		scan.close();
+
 	}
 
 }

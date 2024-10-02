@@ -23,6 +23,7 @@ public class MayorNumeroDeTres {
 		}
 		
 		System.out.println("El número mayor es: " + mayor);
+		scan.close();
 	}
 
 }
