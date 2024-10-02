@@ -2,7 +2,7 @@ package unidad_02;
 
 import java.util.Scanner;
 
-public class MayorNumero {
+public class MayorNumeroFor {
 
 	public static void main(String[] args) {
 		//Opción A. Indicamos el número de datos a evaluar
@@ -22,8 +22,6 @@ public class MayorNumero {
 		
 		System.out.println("El mayor numero es " + mayorNumero);
 		
-		
-		//Opción B. Declaración del scanner para obtener dato por teclado
 	}
 
 }
