@@ -2,11 +2,11 @@ package unidad_02;
 
 import java.util.Scanner;
 
-public class NumeroVeces {
+public class EscribirSimbolo {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("""
-				Opciones: + , * , $ y ç
+				Opciones: + , * , $ y €
 				Repeticiones 3 - 10
 				""");
 		
@@ -18,29 +18,16 @@ public class NumeroVeces {
 		System.out.print("Introduzca caracter especial: ");
 		do {
 			caracter = scan.nextLine();
-			switch (caracter) {
-			case "+" :
+			if ("+".equals(caracter) || "*".equals(caracter) || "$".equals(caracter) || "€".equals(caracter)) {
 				correcto = true;
-				break;
-			case "*" :
-				correcto = true;
-				break;
-			case "$" :
-				correcto = true;
-				break;
-			case "ç" :
-				correcto = true;
-				break;
-			default :
+			} else {
 				correcto = false;
 				System.out.print("Solo se puede introducir + , * , $ o ç: ");
-				break;
 			}
 		} while (!correcto);
 		
-		System.out.print("Introduzca numero repeticiones: ");
+		System.out.print("Introduzca numero de repeticiones: ");
 		do {
-			
 			numero = scan.nextInt();
 			if (numero <= 10 && numero >= 3 ) {
 				correcto = true;
@@ -52,21 +39,20 @@ public class NumeroVeces {
 		
 		System.out.print("""
 				Eligue opción:
-				1. Horizontal
-				2. Vertical
+				1. Vertical
+				2. Horizontal
 				""");
-	
 		do {
 			opcion = scan.nextInt();
 			switch (opcion){
 			case 1:
 				for (int index = 0; index < numero; index++) {
-					System.out.println(caracter + numero);
+					System.out.println(caracter);
 				}
 				break;
 			case 2:
 				for (int index = 0; index < numero; index++) {
-					System.out.print(caracter + numero + " ");
+					System.out.print(caracter + " ");
 				}
 				break;
 			default:
@@ -75,6 +61,7 @@ public class NumeroVeces {
 				break;
 			}
 		} while (!correcto);
+		
 	scan.close();
 	}
 }
