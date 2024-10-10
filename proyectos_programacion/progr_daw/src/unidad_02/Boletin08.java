@@ -12,7 +12,7 @@ public class Boletin08 {
 		int num2 = scan.nextInt();
 		System.out.print("Introduce el tercer número: ");
 		int num3 = scan.nextInt();
-		scan.close();
+		scan.close();              
 		int mayor = 0;
 		int mediano = 0;
 		int menor = 0;
