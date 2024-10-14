@@ -1,4 +1,4 @@
-package unidad_02;
+package unidad_02.boletin02;
 
 import java.util.Scanner;
 
@@ -14,7 +14,8 @@ public class Boletin09 {
 		System.out.println("Introduce 3 para la derecha");
 		System.out.println("Introduce 4 para la izquierda");
 		int inputDireccion = sc.nextInt();
-
+		sc.close();
+		
 		boolean correcto = false;
 		String piramide =  "";
 		char caracter = 1;
@@ -36,8 +37,7 @@ public class Boletin09 {
 		if (correcto) {
 			switch (inputDireccion) {
 			case 1:
-				piramide = "  " + caracter + "  " + "\n" + " " + caracter + caracter + caracter + " " + "\n"
-						+ caracter + caracter + caracter + caracter + caracter;
+				piramide = "  " + caracter + "  " + "\n" + " " + caracter + caracter + caracter + " " + "\n" + caracter + caracter + caracter + caracter + caracter;
 				System.out.println(piramide);
 				break;
 				
@@ -47,10 +47,13 @@ public class Boletin09 {
 				break;
 				
 			case 3:
-
+				piramide = caracter + "\n" + caracter + caracter + "\n" + caracter + caracter + caracter + "\n" + caracter + caracter + "\n" + caracter;
+				System.out.println(piramide);
 				break;
+				
 			case 4:
-
+				piramide = "  " + caracter + "\n " + caracter + caracter + "\n" + caracter + caracter + caracter + "\n " + caracter + caracter + "\n  " + caracter ;
+				System.out.println(piramide);
 				break;
 
 			default:
