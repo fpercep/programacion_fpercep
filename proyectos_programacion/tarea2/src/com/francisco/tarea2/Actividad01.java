@@ -5,30 +5,30 @@ import java.util.Scanner;
 public class Actividad01 {
 
 	public static void main(String[] args) {
+		
 		Scanner scan = new Scanner(System.in);
-		boolean fin = false;
-		String contrasenia = "hola";
-
+		boolean finish = false;
+		final String PASSWORD = "hola";
 		int intentos = 3;
+		
 		do {
 			System.out.println("Introduce contraseña: ");
-			String intento = scan.nextLine();
+			String input = scan.nextLine();
 			
-			if (intento.equals(contrasenia)) {
-				fin = true;
-				System.out.println("contraseeña correcta!!");
+			if (PASSWORD.equals(input)) {
+				finish = true;
+				System.out.println("Contraseeña Correcta!!");
 			} else if (intentos > 1) {
-				fin = false;
+				finish = false;
 				intentos --;
 				System.out.println("INCORRECTO");
-				System.out.println("Te quedan " + intentos);
-
+				System.out.println("Te quedan " + intentos + " intentos");
 			}  else {
-				fin = true;
+				finish = true;
 				System.err.println("Te quedaste sin intentos");
 			}
 			
-		} while (!fin);
+		} while (!finish);
 		scan.close();
 		
 	}
