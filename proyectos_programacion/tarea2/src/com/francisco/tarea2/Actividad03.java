@@ -18,7 +18,7 @@ public class Actividad03 {
 			num = scan.nextInt();
 			if(num > 0){
 				if(num >= mayor) { mayor = num;}
-				if(num <= menor && num != 0) { menor = num;}
+				if(num <= menor ) { menor = num;}
 				suma = num + suma;
 				cantidad ++;}
 			else if (num != 0) {System.err.println("SOLO SE PERMITE INTRODUCIR NÚMEROS POSITIVOS");}	
