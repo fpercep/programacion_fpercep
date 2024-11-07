@@ -1,4 +1,4 @@
-package unidad_3;
+package unidad_3.boletin;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
