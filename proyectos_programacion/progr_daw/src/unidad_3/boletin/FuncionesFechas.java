@@ -1,5 +1,6 @@
 package unidad_3.boletin;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -41,4 +42,28 @@ public class FuncionesFechas {
 		return dia;
 	}
 	
+	public static boolean esFechaPasada(Date fecha, Date fechaReferencia) {
+		return fecha.before(fechaReferencia);
+	}
+	
+	public static boolean esFechaPasada(Calendar fecha, Calendar fechaReferencia) {
+		return fecha.before(fechaReferencia);
+	}
+	
+	public static boolean esBisisto (int anio) {
+		boolean esBisiesto = false;
+		if (anio % 400 == 0 || (anio % 4 == 0 && anio % 100 != 0)) {
+			esBisiesto = true;
+		}
+		return esBisiesto;
+	}
+	
+	public static String formatearFecha (Date fecha, String formato) {
+		SimpleDateFormat sdf = new SimpleDateFormat();
+		String fechaFormateada = sdf.format(fecha);
+		return fechaFormateada;
+	}
+	public static String formatearFecha (Calendar fecha, String formato) {
+		return formatearFecha (fecha.getTime(), formato);
+	}
 }

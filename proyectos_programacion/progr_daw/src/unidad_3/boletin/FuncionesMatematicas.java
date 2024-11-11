@@ -67,9 +67,39 @@ public class FuncionesMatematicas {
 		return esCapicua;
 	}
 	
+//	public static String letraNif(long nifSinLetra) {
+//	    long input = nifSinLetra % 23;
+//	    String letra = "";
+//	    String[] letras = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", 
+//                "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", 
+//                "C", "K", "E"};
+//	    if (input <= 20 || input >= 0) {
+//	    	letra = letras[(int) input];
+//	    } else {
+//	    	letra = "DNI incorrecto";
+//	    }
+//	    return letra;
+//	}	
 	
+	public static char letraNif(long dni) {
+		String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+		int resto = (int) dni % 23;
+		char letra = letras.charAt(resto);
+		return letra;
+	}
 	
-	
-	
+	public static boolean nifCorrecto(String dni) {
+		if(dni.length()<9) {
+			int faltan = 9 - dni.length();
+			for (int i = 0; i < faltan ; i++) {
+				dni = "0" + dni;
+			}
+		}
+		char letra = dni.substring(8).charAt(0);
+		long numero = Long.parseLong(dni.substring(0,8));
+		boolean correcto = letraNif(numero) == letra;
+		return correcto;
+	}
+
 	
 }
