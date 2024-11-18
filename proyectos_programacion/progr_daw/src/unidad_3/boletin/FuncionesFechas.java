@@ -59,7 +59,7 @@ public class FuncionesFechas {
 	}
 	
 	public static String formatearFecha (Date fecha, String formato) {
-		SimpleDateFormat sdf = new SimpleDateFormat();
+		SimpleDateFormat sdf = new SimpleDateFormat(formato);
 		String fechaFormateada = sdf.format(fecha);
 		return fechaFormateada;
 	}
