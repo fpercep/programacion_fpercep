@@ -18,7 +18,7 @@ public class Ej14 {
 		for (int fila = 8; fila >= 1; fila--) {
 			System.out.print(fila + "\t");
 			for (char col = 'a'; col <='h' ; col++) {
-				if (col == letra && fila == numero) {
+				if (col == letra || fila == numero) {
 					System.out.print("A" + "\t");
 					tablero [fila][col] = "A";
 				} 
