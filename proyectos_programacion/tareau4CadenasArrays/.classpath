@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/proyectos_git/programacion_fpercep/libraries/commons-lang3-3.17.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.17.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
