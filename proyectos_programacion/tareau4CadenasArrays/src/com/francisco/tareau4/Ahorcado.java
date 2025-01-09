@@ -41,7 +41,7 @@ public class Ahorcado {
 						if (letra.length() != 1) {
 							System.err.println("Porfavor introduce solo un caracter");
 						}else {
-
+							cambiarPalabra(palabraAlt, palabraMos, letra);
 						}
 					case "R":
 
@@ -67,6 +67,19 @@ public class Ahorcado {
 			}
 			
 		} while (!salir);
-
 	}
-}
+	
+	private static String cambiarPalabra(String original, String cambiar , String letra) {
+		if (original.contains(letra)) {
+			int contador = 0;
+//	        for (int i = 0; i < original.length(); i++) {
+//	        	//Sacar letra en la posicion actual
+//	        	if( letraActual == letra) {
+//	        	//cambiarla en cambiar por la letra de original de la misma posición
+//	        	}
+//	        }
+			
+		} 
+		return cambiar;
+	}
+}	
