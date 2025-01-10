@@ -1,0 +1,6 @@
+sort: Ordena el array.
+binarySearch: Busca un elemento en el array (debe estar ordenado).
+equals: Compara dos arrays.
+fill: Rellena un array con un valor específico.
+copyOf: Crea una copia de un array con una nueva longitud.
+toString: Convierte un array en una cadena que muestra su contenido.

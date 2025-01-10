@@ -24,34 +24,50 @@ public class Ahorcado {
 				String palabraAlt = opciones[(int) (Math.random() * 10)];
 				String palabraMos = StringUtils.repeat("_", palabraAlt.length());
 				boolean jugar = true;
-				
+				int intentos = 5;
 				do {
-					System.out.println(palabraMos + "\n");
+
+					System.out.println(palabraMos);
+					System.out.println("Te quedan " + intentos + " intentos");
 					System.out.println("""
 							L.- Jugar
-							R.- Finalizar el juego
+							R.- Resolver palabra
 							S.- Salir 
 							""");
-					String subMenu = scan.nextLine();
-					
+					String subMenu = scan.nextLine().toUpperCase();
 					switch (subMenu) {
 					case "L":
-						System.out.println("Introduce un letra");
-						String letra = scan.nextLine();
+						System.out.println("Introduce un letra:");
+						String letra = scan.nextLine().toLowerCase();
 						if (letra.length() != 1) {
 							System.err.println("Porfavor introduce solo un caracter");
 						}else {
-							cambiarPalabra(palabraAlt, palabraMos, letra);
+							palabraMos = cambiarPalabra(palabraAlt, palabraMos, letra);
+							intentos --;
 						}
+						break;
 					case "R":
-
+						System.out.println("Introduce una palabra:");
+						String intento = scan.nextLine().toLowerCase();
+						if (intento.equals(palabraAlt)){
+							System.out.println("\nEs correcto, lo conseguiste");
+							jugar = false;
+						} else {
+							System.out.println("No es correcto \n");
+							intentos --;
+						}
 						break;
 					case "S":
 						jugar = false;
 						break;
 					default:
-						System.err.println("Opción Incorrecta, vulve a intentarlo");
+						System.err.println("\nOpción Incorrecta, vulve a intentarlo");
 						break;
+					}
+					if (intentos == 0) {
+						System.out.println("\nLa palabra era " + palabraAlt);
+						System.out.println("Perdiste lo siento, ¿Quizas a la proxima?\n");
+						jugar = false;
 					}
 				} while (jugar);
 				break;
@@ -70,16 +86,16 @@ public class Ahorcado {
 	}
 	
 	private static String cambiarPalabra(String original, String cambiar , String letra) {
+		String resultado = cambiar;
 		if (original.contains(letra)) {
-			int contador = 0;
-//	        for (int i = 0; i < original.length(); i++) {
-//	        	//Sacar letra en la posicion actual
-//	        	if( letraActual == letra) {
-//	        	//cambiarla en cambiar por la letra de original de la misma posición
-//	        	}
-//	        }
-			
+        	char letraChar =  letra.charAt(0);
+	        for (int i = 0; i < original.length(); i++) {
+	        	char letraActual = original.charAt(i);
+	        	if( letraActual == letraChar) {
+	        		resultado = resultado.substring(0, i) + letra + resultado.substring(i + 1);
+	        	}
+	        }		
 		} 
-		return cambiar;
+		return resultado;
 	}
 }	
