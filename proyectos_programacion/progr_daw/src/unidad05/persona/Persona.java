@@ -2,118 +2,183 @@ package unidad05.persona;
 
 import java.util.Random;
 
+import unidad05.util.Utilidades;
+
 public class Persona {
-	
+	// Atributos
 	private String nombre;
-	private int edad ;
 	private String dni;
+	private int edad;
 	private char sexo;
-	private double peso;
-	private double altura;
-	
+	private float peso;
+	private float altura;
+
+	// Constructores
+	/**
+	 * Un constructor por defecto
+	 */
+	public Persona() {
+		this.nombre = "";
+		this.dni = this.generaDni();
+		this.edad = 0;
+		this.sexo = 'N';
+		this.peso = 0f;
+		this.altura = 0f;
+	}
+
+	/**
+	 * Un constructor con el nombre, edad y sexo.
+	 */
+	public Persona(String nombre, int edad, char sexo) {
+		this();
+		this.nombre = nombre;
+		this.edad = edad;
+		this.sexo = comprobarSexo(sexo);
+	}
+
+	/**
+	 * Un constructor con todos los atributos como parámetro
+	 */
+	public Persona(String nombre, int edad, char sexo, float peso, float altura) {
+		this(nombre, edad, sexo);
+		this.peso = peso;
+		this.altura = altura;
+	}
+	// getters y setters
+
+	/**
+	 * @return the nombre
+	 */
 	public String getNombre() {
 		return nombre;
 	}
 
+	/**
+	 * @param nombre the nombre to set
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+	/**
+	 * @return the edad
+	 */
 	public int getEdad() {
 		return edad;
 	}
 
+	/**
+	 * @param edad the edad to set
+	 */
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
 
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-
+	/**
+	 * @return the sexo
+	 */
 	public char getSexo() {
 		return sexo;
 	}
 
+	/**
+	 * @param sexo the sexo to set
+	 */
 	public void setSexo(char sexo) {
-		this.sexo = sexo;
+		this.sexo = comprobarSexo(sexo);
 	}
 
-	public double getPeso() {
+	/**
+	 * @return the peso
+	 */
+	public float getPeso() {
 		return peso;
 	}
 
-	public void setPeso(double peso) {
+	/**
+	 * @param peso the peso to set
+	 */
+	public void setPeso(float peso) {
 		this.peso = peso;
 	}
 
-	public double getAltura() {
+	/**
+	 * @return the altura
+	 */
+	public float getAltura() {
 		return altura;
 	}
 
-	public void setAltura(double altura) {
+	/**
+	 * @param altura the altura to set
+	 */
+	public void setAltura(float altura) {
 		this.altura = altura;
 	}
-	
-	public Persona () {
-		
-		this.nombre = "";
-		this.edad = 0;
-		this.dni = this.generarDNI();
-		this.sexo = 'N';
-		this.peso = 0d;
-		this.altura = 0d;
-	}
-	
-	public Persona (String nombre, int edad, char sexo) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.sexo = comprobarSexo(sexo);
-		this.dni = this.generarDNI();
-		this.peso = 0d;
-		this.altura = 0d;
 
+	/**
+	 * @return the dni
+	 */
+	public String getDni() {
+		return dni;
 	}
-	
-	public Persona (String nombre, int edad, char sexo, Double peso, Double altura) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.sexo = comprobarSexo(sexo);
-		this.peso = peso;
-		this.altura = altura;
-		this.dni = this.generarDNI();
 
-	}
-	
+	// métodos de instancia
+	/**
+	 * Devuelve el sexo H o M si es correcto o N en cualquier otro caso
+	 * 
+	 * @param sexo
+	 * @return sexoFinal
+	 */
 	private char comprobarSexo(char sexo) {
-		char SexoFinal = 'N';
-		sexo =  Character.toUpperCase(sexo);
-		if (sexo == 'M' || sexo == 'H') {
-			SexoFinal = sexo;
+		char sexoFinal = 'N';
+		sexo = Character.toUpperCase(sexo);
+		if (sexo == 'H' || sexo == 'M') {
+			sexoFinal = sexo;
 		}
-		return SexoFinal;
+		return sexoFinal;
 	}
-	
-	private String generarDNI() {
+
+	/**
+	 * Devuelve un dni aleatoriamente
+	 * 
+	 * @return dni
+	 */
+	private String generaDni() {
+		// 8 numeros y una letra
 		Random random = new Random();
-		int numeroDNI = random.nextInt(99999999) + 1;
-		String letrasDni = "TRWAGMYFPDXBNJZSQVHLCKE";
-		char letra = letrasDni.charAt((int) (numeroDNI % 23));
-		String dni = "" + numeroDNI + letra;
+		int numero = random.nextInt(99999999) + 1;
+		char letra = Utilidades.LETRAS.charAt(numero % 23);
+		String dni = numero + String.valueOf(letra);
 		while (dni.length() < 9) {
 			dni = "0" + dni;
 		}
 		return dni;
 	}
+
 	
+
+	/**
+	 * Devuelve true si la persona tiene 18 años o más
+	 * 
+	 * @return
+	 */
 	public boolean esMayorDeEdad() {
 		return this.edad >= 18;
 	}
 
+	public int calcularImc() {
+		float imc = this.peso / (this.altura * this.altura);
+		int pesoIdeal = 0;
+		if (imc < 20) {
+			pesoIdeal = -1;
+		} else if (imc > 25) {
+			pesoIdeal = 1;
+		}
+		return pesoIdeal;
+	}
+
+	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Persona:\n");
@@ -140,19 +205,21 @@ public class Persona {
 		builder.append(peso);
 		builder.append(" kg., altura: ");
 		builder.append(altura * 100);
-		builder.append(" cm.");
+		builder.append(" cm.\n");
+		if (peso > 0 && altura > 0) {
+			switch (this.calcularImc()) {
+			case -1:
+				builder.append("Su IMC es menor a 20, tiene infrapeso.");
+				break;
+			case 0:
+				builder.append("Su IMC está entre 20 y 25, tiene peso ideal.");
+				break;
+			case 1:
+				builder.append("Su IMC es mayor a 25, tiene sobrepeso.");
+				break;
+			}
+		}
 		return builder.toString();
 	}
 
-	
-	public int calcularImc() {
-		float imc = (float) (this.peso / (this.altura * this.altura));
-		int pesoIdeal = 0;
-		if (imc < 20) {
-			pesoIdeal = -1;
-		} else if (imc > 25) {
-			pesoIdeal = 1;
-		}
-		return pesoIdeal;
-	}
 }
