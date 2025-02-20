@@ -1,7 +1,5 @@
 package unidad05;
 
-import java.util.Arrays;
-
 import unidad05.exception.DadoNoPermitidoException;
 
 public class Dado {
