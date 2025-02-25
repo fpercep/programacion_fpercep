@@ -40,7 +40,12 @@ public class TestEquipo {
 					4. Mostrar equipos
 					5. Salir
 					Opción:""");
-			int opcion = Utilidades.dameEntero();
+			int opcion = -1;
+			try {
+				opcion = Utilidades.dameEntero();
+			} catch (UtilidadesParametroTipoIncorrectoException e) {
+				System.err.println("La opción elegida no es correcta");
+			}
 			switch (opcion) {
 			case 1:
 				boolean anadido = false;
