@@ -1,4 +1,4 @@
-package cuentasDeBanco;
+ package cuentasDeBanco;
 
 public abstract class CuentaBancaria {
 	private Persona titular;

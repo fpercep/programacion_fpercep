@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/proyectos_git/programacion_fpercep/libraries/commons-lang3-3.17.0.jar">
+	<classpathentry kind="lib" path="E:/repositorios_git/repositorios_2425/programacion_fpercep/libraries/commons-lang3-3.17.0.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

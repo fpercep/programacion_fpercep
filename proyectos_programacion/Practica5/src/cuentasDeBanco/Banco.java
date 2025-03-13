@@ -1,4 +1,4 @@
-package cuentasDeBanco;
+  package cuentasDeBanco;
 
 public class Banco {
 	private Imprimible[] Banco = new Imprimible[100];
