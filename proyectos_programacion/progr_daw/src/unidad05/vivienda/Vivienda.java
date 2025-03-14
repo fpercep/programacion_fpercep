@@ -3,7 +3,13 @@ package unidad05.vivienda;
 public abstract class Vivienda implements Hipotecable{
 	private String direccion;
 	private int metrosCuadrados;
-//	private Propietario propietario;
+	private Propietario propietario;
+	
+	public Vivienda(String direccion, int metrosCuadrados, Propietario propietario) {
+		this.direccion = direccion;
+		this.metrosCuadrados = metrosCuadrados;
+		this.propietario = propietario;
+	}
 	
 	public String getDireccion() {
 		return direccion;
@@ -17,12 +23,12 @@ public abstract class Vivienda implements Hipotecable{
 	public void setMetrosCuadrados(int metrosCuadrados) {
 		this.metrosCuadrados = metrosCuadrados;
 	}
-//	public String getPropietario() {
-//		return propietario;
-//	}
-//	public void setPropietario(Propietario propietario) {
-//		this.propietario = propietario;
-//	}
+	public Propietario getPropietario() {
+		return propietario;
+	}
+	public void setPropietario(Propietario propietario) {
+		this.propietario = propietario;
+	}
 	
 	
 }
