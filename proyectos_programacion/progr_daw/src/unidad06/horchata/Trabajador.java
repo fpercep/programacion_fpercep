@@ -27,10 +27,9 @@ public class Trabajador implements Comparable<Trabajador>{
 
 	@Override
 	public int compareTo(Trabajador otroTrabajador) {
-		int compare = 0;
-		compare = this.trabajo - otroTrabajador.trabajo;
+		int compare = otroTrabajador.trabajo - this.trabajo;
 		if (compare == 0) {
-			compare = otroTrabajador.litros - this.litros;
+			compare = this.litros - otroTrabajador.litros;
 		}
 		return compare;
 	}
